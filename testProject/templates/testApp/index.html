@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{%extends 'testApp/base.html'%}
+      {%block body_block%}
+        <h1>product Information DashBoard</h1>
+            {% if request.user.is_authenticated %}
+                <a href="{% url 'logoutview' %}"> logout</a>
+            {% endif %}
+<hr>
+        <table border='2'>
+          <thead>
+            <th>Product Name</th>
+            <th>Product Brand</th>
+            <th>Product Price</th>
+            <th>Actions</th>
+          </thead>
+          {% for product in products %}
+          <tr>
+            <td>{{product.productname}}</td>
+            <td>{{product.brand}}</td>
+            <td>{{product.price}}</td>
+            <td></a> <a href="{% url 'update' product.id  %}">Update &nbsp</a> <a href="{% url 'delete' product.id  %}">Delete</a> </td>
+          </tr>
+          {%endfor%}
+        </table><br><br>
+        <a href="{% url 'create' %}">insert a product &nbsp
+
+
+
+      {%endblock %}

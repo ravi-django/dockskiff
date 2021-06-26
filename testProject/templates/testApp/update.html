@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+{%extends 'testApp/base.html'%}
+      {%block body_block%}
+        <h1>product  Update Form</h1><hr>
+        <form method="post">
+          {%csrf_token %}
+          product Name: <input type="text" name="productname" value="{{product.productname}}"><br>
+          product Brand: <input type="text" name="brand" value="{{product.brand}}"><br>
+          product price: <input type="text" name="price" value="{{product.price}}"><br>
+          <input type="submit" name="" value="Update Product">
+        </form>
+
+      {%endblock %}
