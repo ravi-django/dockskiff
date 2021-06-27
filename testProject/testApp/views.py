@@ -1,6 +1,5 @@
 from django.contrib import messages
 from django.shortcuts import render, redirect
-
 from .forms import ProductForm, signupform
 from .models import Product
 from django.contrib.auth.decorators import login_required
@@ -59,5 +58,5 @@ def signup(request):
         user = form.save()
         user.set_password(user.password)
         user.save()
-        return redirect('retrieve_view')
+        return redirect('/')
     return render(request, 'testApp/signup.html', {'form': form})
