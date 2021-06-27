@@ -13,4 +13,4 @@ class ProductForm(ModelForm):
 class signupform(ModelForm):
     class Meta:
         model = User
-        fields = ('username', 'password')
+        fields = ('username','email', 'password')
